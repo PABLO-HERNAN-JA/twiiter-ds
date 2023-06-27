@@ -1,0 +1,37 @@
+{% extends 'twitter/layout.html' %}
+
+{% block content %}
+
+<body class="login-page">
+    <div class="twitter-login-box">
+        <header>
+            <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp"
+                alt="twitter logo">
+            <h1>Inicia Sesión</h1>
+        </header>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-wrapper">
+                <label for="user-name-id">Usuario</label>
+                {{ form.username }}
+            </div>
+
+            <div class="input-wrapper">
+                <label for="password-id">Contraseña</label>
+                {{ form.password }}
+            </div>
+            {% if form.errors %}
+            <center>Usuario o contraseña incorrecta</center>
+            {% endif %}
+
+            <button class="twitter-btn">Iniciar sesion</button>
+        </form>
+
+        <div class="footer">
+            <a href="#">Recuperar Contraseña</a> .
+            <a href="#">Registrate en twitter</a>
+        </div>
+
+    </div>
+    {% endblock content %}
