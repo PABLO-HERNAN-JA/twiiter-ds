@@ -1,1 +1,1 @@
-web: gunicorn social_project.wsgi --bind 0.0.0.0:$PORT
+web: gunicorn twitter.wsgi --log-file
