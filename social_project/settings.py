@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bi4#$3a12v9%kz34#wg(xm^q!7p8jp%v84zt-csm1@mlb@@bqy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['twiiter-ds-3a064455314c.herokuapp.com', '192.168.56.1']
 
 
 
