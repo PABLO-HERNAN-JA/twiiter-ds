@@ -1,1 +1,1 @@
-web: gunicorn twiiter-ds.wsgi --log-file -
+web: gunicorn twiiter-ds --bind 0.0.0.0:$PORT
