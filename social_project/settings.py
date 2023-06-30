@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-bi4#$3a12v9%kz34#wg(xm^q!7p8jp%v84zt-csm1@mlb@@bqy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['twiiter-ds-3a064455314c.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
+
 
 
 # Application definition

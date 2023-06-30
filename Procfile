@@ -1,1 +1,1 @@
-web: gunicorn twiiter-ds --bind 0.0.0.0:$PORT
+web: gunicorn twiiter-ds.wsgi --bind 0.0.0.0:$PORT
