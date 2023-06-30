@@ -72,14 +72,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'social_project.wsgi.application'
 
+#DATABASES 
+#     'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': BASE_DIR / 'db.sqlite3',
+#   }
+#}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dcd1q191ctn3q9',
+        'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
+        'USER': 'geetsfwttznzkn',
+        'PASSWORD': 'd60c857a56debb6cb2847e46ed673681350c36ebf40f1bcdebac2db726c4b006',
+        'PORT': '5432',
     }
 }
 
