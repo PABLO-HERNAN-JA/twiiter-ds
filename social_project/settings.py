@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'social_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dcd1q191ctn3q9',
         'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
         'USER': 'geetsfwttznzkn',
