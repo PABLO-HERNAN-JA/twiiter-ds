@@ -82,25 +82,17 @@ WSGI_APPLICATION = 'social_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'DATABASE': 'dcd1q191ctn3q9',
-#        'USER': 'geetsfwttznzkn',
-#        'PASSWORD': 'd60c857a56debb6cb2847e46ed673681350c36ebf40f1bcdebac2db726c4b006',
-#        'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
-#        'PORT': '5432',
-#    }
-#}
-import dj_database_url
-
-from decouple import config
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'DATABASE': 'dcd1q191ctn3q9',
+        'USER': 'geetsfwttznzkn',
+        'PASSWORD': 'd60c857a56debb6cb2847e46ed673681350c36ebf40f1bcdebac2db726c4b006',
+        'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
 }
+
 
 
 # Password validation
