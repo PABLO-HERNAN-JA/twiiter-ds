@@ -100,16 +100,6 @@ DATABASES = {
 #        default=config('DATABASE_URL')
 #    )
 #}
-# Configuración de Azure Blob Storage
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-AZURE_ACCOUNT_NAME = 'heroku'
-AZURE_ACCOUNT_KEY = '<XozyNXwvvwuIxI7mrGjdAGyZs/cQY/yG1uvIv/2duAwWcVx4JFZ5AYH/09K6av3MJ6mBTMwziJmL+AStBUKzyg==>'
-AZURE_CONTAINER = '<logs>'
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
- # Cambia 'your-location' por la ubicación del centro de datos Azure que desees utilizar
-
-
-
 
 
 # Password validation
@@ -162,7 +152,6 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
