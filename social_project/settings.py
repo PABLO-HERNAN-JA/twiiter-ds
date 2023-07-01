@@ -100,17 +100,17 @@ DATABASES = {
 #        default=config('DATABASE_URL')
 #    )
 #}
-
+# Configuración de Azure Blob Storage
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-
 AZURE_ACCOUNT_NAME = 'heroku'
-AZURE_ACCOUNT_KEY = 'XozyNXwvvwuIxI7mrGjdAGyZs/cQY/yG1uvIv/2duAwWcVx4JFZ5AYH/09K6av3MJ6mBTMwziJmL+AStBUKzyg=='
-AZURE_CONTAINER = '$logs'
-AZURE_URL_EXPIRATION_SECS = 3600  # Tiempo de expiración de las URL de acceso a los archivos
+AZURE_ACCOUNT_KEY = '<XozyNXwvvwuIxI7mrGjdAGyZs/cQY/yG1uvIv/2duAwWcVx4JFZ5AYH/09K6av3MJ6mBTMwziJmL+AStBUKzyg==>'
+AZURE_CONTAINER = '<$logs>'
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_LOCATION = 'eastus'  # Cambia 'your-location' por la ubicación del centro de datos Azure que desees utilizar
 
 # Configuración de URL para archivos cargados
-AZURE_CUSTOM_DOMAIN = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-MEDIA_URL = f'{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -162,7 +162,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
 
