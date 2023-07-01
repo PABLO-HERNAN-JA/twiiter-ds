@@ -1,1 +1,1 @@
-web: gunicorn twiiter-ds.wsgi
+web: gunicorn social_project.wsgi --log-file-

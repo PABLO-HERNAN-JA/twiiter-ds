@@ -24,9 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bi4#$3a12v9%kz34#wg(xm^q!7p8jp%v84zt-csm1@mlb@@bqy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['twiiter-ds-3a064455314c.herokuapp.com', '192.168.56.1']
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -51,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'social_project.urls'
@@ -82,15 +82,24 @@ WSGI_APPLICATION = 'social_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'DATABASE': 'dcd1q191ctn3q9',
+#        'USER': 'geetsfwttznzkn',
+#        'PASSWORD': 'd60c857a56debb6cb2847e46ed673681350c36ebf40f1bcdebac2db726c4b006',
+#        'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    }
+#}
+import dj_database_url
+
+from decouple import config
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'DATABASE': 'dcd1q191ctn3q9',
-        'USER': 'geetsfwttznzkn',
-        'PASSWORD': 'd60c857a56debb6cb2847e46ed673681350c36ebf40f1bcdebac2db726c4b006',
-        'HOST': 'ec2-3-233-77-220.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+
 }
 
 
@@ -128,8 +137,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL ='/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -141,3 +154,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
