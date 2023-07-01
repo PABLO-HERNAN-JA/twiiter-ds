@@ -104,7 +104,7 @@ DATABASES = {
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 AZURE_ACCOUNT_NAME = 'heroku'
 AZURE_ACCOUNT_KEY = '<XozyNXwvvwuIxI7mrGjdAGyZs/cQY/yG1uvIv/2duAwWcVx4JFZ5AYH/09K6av3MJ6mBTMwziJmL+AStBUKzyg==>'
-AZURE_CONTAINER = '<$logs>'
+AZURE_CONTAINER = '<logs>'
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 AZURE_LOCATION = 'eastus'  # Cambia 'your-location' por la ubicación del centro de datos Azure que desees utilizar
 
