@@ -16,4 +16,6 @@ urlpatterns = [
     path('follow/<str:username>/', views.follow, name='follow'),
 	path('unfollow/<str:username>/', views.unfollow, name='unfollow'),
 
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]  
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
