@@ -4,19 +4,18 @@
 <body class="login-page">
     <div class="twitter-login-box">
         <header>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp" alt="twitter logo">
-            <h1>Registrate en Wolfer</h1>
+            <h1>Registrate en Twitter</h1>
         </header>
 
         <form method="post">
             {% csrf_token %}
             <div class="input-wrapper">
-                <label for="user-name-id">Nombre</label>
+                <label for="user-name-id">First Name</label>
                 {{ form.first_name }}
             </div>
             <div class="input-wrapper">
-                <label for="user-name-id">Usuario</label>
+                <label for="user-name-id">Username</label>
                 {{ form.username }}
             </div>
             <div class="input-wrapper">
@@ -25,59 +24,21 @@
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Contraseña</label>
+                <label for="password-id">Password</label>
                 {{ form.password1 }}
             </div>
             <div class="input-wrapper">
-                <label for="password-id">Confirmar contraseña</label>
+                <label for="password-id">Confirm Password</label>
                 {{ form.password2 }}
             </div>
-            <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)">Registrarse</button>
+
+            <button class="twitter-btn">Registrarse</button>
         </form>
-        <div class="modal fade" id="avisoModal" tabindex="-1" role="dialog" aria-labelledby="avisoModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="avisoModalLabel">Aviso importante</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>¡Estás a punto de registrarte!</p>
-                  <p>Queremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.</p>
-                  <p>Si estás de acuerdo, por favor revisa los datos antes de continuar con el registro.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>        
-        <script>
-            let primerClic = true;
-        
-            function mostrarAviso(event) {
-              event.preventDefault(); // Evitamos que el formulario se envíe
-        
-              if (primerClic) {
-                $('#avisoModal').modal('show');
-                primerClic = false;
-              } else {
-                $('#registro-form').submit();
-              }
-            }
-          </script>
+
         <div class="footer">
-            <a href="https://twiiter-ds-3a064455314c.herokuapp.com/">¿Ya tienes una cuenta? Login</a>
+            <a href="#">¿Ya tienes una cuenta? Login</a>
         </div>
-        <footer>
-            <div class="container">
-            <p>&copy; 2023 UTSJR-JALPAN. Diseñado por PABLO JASSO Y FELIPE MAYORGA</a>.</p>
-            </div>
-        </footer> 
+
     </div>
 
 {% endblock content %}
