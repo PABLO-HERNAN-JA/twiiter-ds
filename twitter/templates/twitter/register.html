@@ -5,17 +5,17 @@
     <div class="twitter-login-box">
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp" alt="twitter logo">
-            <h1>Registrate en Twitter</h1>
+            <h1>Registrate en Wolfer</h1>
         </header>
 
         <form method="post">
             {% csrf_token %}
             <div class="input-wrapper">
-                <label for="user-name-id">First Name</label>
+                <label for="user-name-id">Nombre</label>
                 {{ form.first_name }}
             </div>
             <div class="input-wrapper">
-                <label for="user-name-id">Username</label>
+                <label for="user-name-id">Usuario</label>
                 {{ form.username }}
             </div>
             <div class="input-wrapper">
@@ -24,11 +24,11 @@
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Password</label>
+                <label for="password-id">Contraseña</label>
                 {{ form.password1 }}
             </div>
             <div class="input-wrapper">
-                <label for="password-id">Confirm Password</label>
+                <label for="password-id">Confirmar contraseña</label>
                 {{ form.password2 }}
             </div>
             <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)">Registrarse</button>
@@ -50,9 +50,14 @@
         </script>
 
         <div class="footer">
-            <a href="#">¿Ya tienes una cuenta? Login</a>
+            <a href="https://twiiter-ds-3a064455314c.herokuapp.com/">¿Ya tienes una cuenta? Login</a>
         </div>
-
+        <footer>
+            <div class="container">
+              <p>&copy; 2023 Mi Empresa. Todos los derechos reservados. Diseñado por <a href="https://www.tudominio.com">Tu Nombre</a>.</p>
+            </div>
+          </footer>
+          
     </div>
 
 {% endblock content %}
