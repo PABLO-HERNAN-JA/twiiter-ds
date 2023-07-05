@@ -31,9 +31,23 @@
                 <label for="password-id">Confirm Password</label>
                 {{ form.password2 }}
             </div>
-
-            <button class="twitter-btn">Registrarse</button>
+            <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)"></button>
         </form>
+        <script>
+            let primerClic = true;
+    
+            function mostrarAviso(event) {
+                event.preventDefault(); // Evitamos que el formulario se envíe
+    
+                if (primerClic) {
+                    alert("¡Estás a punto de registrarte! Por favor, revisa los datos antes de continuar.");
+                    primerClic = false;
+                } else {
+                    // Si es el segundo clic, podemos enviar el formulario
+                    document.getElementById("registro-form").submit();
+                }
+            }
+        </script>
 
         <div class="footer">
             <a href="#">¿Ya tienes una cuenta? Login</a>
