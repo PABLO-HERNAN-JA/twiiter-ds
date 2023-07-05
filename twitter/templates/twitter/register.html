@@ -31,7 +31,7 @@
                 <label for="password-id">Confirm Password</label>
                 {{ form.password2 }}
             </div>
-            <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)"></button>
+            <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)">Registrarse</button>
         </form>
         <script>
             let primerClic = true;
@@ -40,7 +40,7 @@
                 event.preventDefault(); // Evitamos que el formulario se envíe
     
                 if (primerClic) {
-                    alert("¡Estás a punto de registrarte! Por favor, revisa los datos antes de continuar.");
+                    alert("¡Estás a punto de registrarte!\n\nQueremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.\n\nSi estás de acuerdo, por favor revisa los datos antes de continuar con el registro, saludos de los alumnos de la UTSJR-JALPAN");
                     primerClic = false;
                 } else {
                     // Si es el segundo clic, podemos enviar el formulario
