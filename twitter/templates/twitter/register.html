@@ -36,46 +36,46 @@
         </form>
         <div class="modal fade" id="avisoModal" tabindex="-1" role="dialog" aria-labelledby="avisoModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="avisoModalLabel">Aviso importante</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <h5 class="modal-title" id="avisoModalLabel">Aviso importante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                     <span aria-hidden="true">&times;</span>
-                  </button>
+                </button>
                 </div>
                 <div class="modal-body">
-                  <p>¡Estás a punto de registrarte!</p>
-                  <p>Queremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.</p>
-                  <p>Si estás de acuerdo, por favor revisa los datos antes de continuar con el registro.</p>
+                <p>¡Estás a punto de registrarte!</p>
+                <p>Queremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.</p>
+                <p>Si estás de acuerdo, por favor revisa los datos antes de continuar con el registro.</p>
+
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary" onclick="enviarFormulario()">Registrarte</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="twitter-btn" type="submit" id="registrarte-btn" value="Registrarte" onclick="mostrarAviso(event)">Registrarse</button>
                 </div>
-              </div>
             </div>
-          </div>
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>        
-          <script>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>        
+        <script>
             function mostrarAviso(event) {
               event.preventDefault(); // Evitamos que el formulario se envíe
-              $('#avisoModal').modal('show');
+            $('#avisoModal').modal('show');
             }
         
             function enviarFormulario() {
-              $('#registro-form').submit();
+            $('#registro-form').submit();
             }
-          </script>
+        </script>
         <div class="footer">
             <a href="https://twiiter-ds-3a064455314c.herokuapp.com/">¿Ya tienes una cuenta? Login</a>
         </div>
         <footer>
             <div class="container">
-              <p>&copy; 2023 UTSJR-JALPAN. Todos los derechos reservados. Diseñado por PABLO JASSO Y FELIPE MAYORGA</a>.</p>
+            <p>&copy; 2023 UTSJR-JALPAN. Todos los derechos reservados. Diseñado por PABLO JASSO Y FELIPE MAYORGA</a>.</p>
             </div>
-          </footer>
-          
+        </footer> 
     </div>
 
 {% endblock content %}
