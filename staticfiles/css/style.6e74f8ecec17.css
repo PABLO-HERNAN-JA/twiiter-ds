@@ -208,7 +208,7 @@ a:link {
 }
 
 .twitter-btn{
-    background-color: #1E96EB;
+    background-color: #00a788;
     border: none;
     width: 100%;
     padding: 15px;
@@ -221,10 +221,10 @@ a:link {
 .twitter-login-box .footer{
     text-align: center;
     margin-top: 20px;
-    color: #1E96EB;
+    color: #00a788;
 }
 .twitter-login-box .footer a{
-    color: #1E96EB;
+    color: #00a788;
     text-decoration: none;
 }
 
