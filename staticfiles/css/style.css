@@ -1,5 +1,5 @@
 body {
-  background: #E6E8E9; /*15202b*/;
+  background: #dcfff9; /*15202b*/;
   font-family: 'Asap', sans-serif;
   font-family: 'Roboto', sans-serif;
 }
@@ -153,7 +153,7 @@ a:link {
 }
 
 .btn:hover {
-  background-color: #71C4FF;
+  background-color: #00a788;
   color: white;
 }
 
