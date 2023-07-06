@@ -35,3 +35,5 @@ urllib3==1.25.11
 whitenoise==6.5.0
 wifi==0.3.8
 wrapt==1.11.2
+django-storages
+firebase-admin
