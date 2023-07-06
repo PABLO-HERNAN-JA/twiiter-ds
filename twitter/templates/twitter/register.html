@@ -9,7 +9,7 @@
             <h1>Registrate en Wolfer</h1>
         </header>
 
-        <form method="post">
+        <form id="registro-form" action="/registrarte" method="post">
             {% csrf_token %}
             <div class="input-wrapper">
                 <label for="user-name-id">First Name</label>
@@ -46,43 +46,52 @@
         <!--modal ventana-->
         <div class="modal fade" id="avisoModal" tabindex="-1" role="dialog" aria-labelledby="avisoModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-            <div class="modal-content">
+              <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="avisoModalLabel">Aviso importante</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <h5 class="modal-title" id="avisoModalLabel">Aviso importante</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                  </button>
                 </div>
                 <div class="modal-body">
-                <p>¡Estás a punto de registrarte!</p>
-                <p>Queremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.</p>
-                <p>Si estás de acuerdo, por favor revisa los datos antes de continuar con el registro.</p>
+                  <p>¡Estás a punto de registrarte!</p>
+                  <p>Queremos asegurarte que los datos proporcionados serán utilizados únicamente con fines prácticos y didácticos. No se utilizarán de manera malintencionada ni se compartirán con terceros.</p>
+                  <p>Si estás de acuerdo, por favor revisa los datos antes de continuar con el registro.</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" onclick="enviarFormulario()">Registrarte</button>
                 </div>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
 
         <!--Cerrar ventana-->
         <!--inicio script-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>        
-        <script>
-            let primerClic = true;
-        
-            function mostrarAviso(event) {
-              event.preventDefault(); // Evitamos que el formulario se envíe
-        
-            if (primerClic) {
-                $('#avisoModal').modal('show');
-                primerClic = false;
-            } else {
-                $('#registro-form').submit();
-            }
-            }
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>         
+    <script>
+    let primerClic = true;
+
+    function mostrarAviso(event) {
+      event.preventDefault(); // Evitamos que el formulario se envíe
+
+    if (primerClic) {
+        $('#avisoModal').modal('show');
+        primerClic = false;
+    }
+    }
+
+    function enviarFormulario() {
+    $('#registro-form').submit();
+    }
+
+    $('#avisoModal').on('hidden.bs.modal', function () {
+    if (!primerClic) {
+        enviarFormulario();
+    }
+    });
+    </script>
         <!--fin script-->
 
 
