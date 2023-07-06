@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
+
 ]
 
 MIDDLEWARE = [
@@ -101,11 +101,6 @@ DATABASES = {
 #        default=config('DATABASE_URL')
 #    )
 #}
-
-# Configuración de almacenamiento para Firebase
-DEFAULT_FILE_STORAGE = 'storages.backends.firebase.FirebaseStorage'
-FIREBASE_STORAGE_BUCKET = 'gs://wolfer-e9c9a.appspot.com/'
-FIREBASE_CREDENTIALS = 'wolfer-e9c9a-firebase-adminsdk-uq8hx-62b3b35960.json'
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
